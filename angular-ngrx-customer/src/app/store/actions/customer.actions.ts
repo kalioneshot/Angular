@@ -14,7 +14,7 @@ export enum CustomerActionEnum {
 }
 
 export class GetCustomerAction implements Action {
-    public readonly type = CustomerActionEnum.GET_CUSTOMER_SUCCESS;
+    public readonly type = CustomerActionEnum.GET_CUSTOMER;
     constructor(public payload: string) {}
 }
 
@@ -24,7 +24,7 @@ export class GetCustomerSuccessAction implements Action {
 }
 
 export class GetCustomersAction implements Action {
-    public readonly type = CustomerActionEnum.GET_CUSTOMERS_SUCCESS;
+    public readonly type = CustomerActionEnum.GET_CUSTOMERS;
 }
 
 export class GetCustomersSuccessAction implements Action {
