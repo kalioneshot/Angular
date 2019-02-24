@@ -1,5 +1,5 @@
 import { initialUserState, UserState } from '../states/user.state';
-import {UserActions, UserActionsEnum} from '../actions/user.actions';
+import {UserActions, UserActionsEnum} from '../actions/user.action';
 
 // Let’s discuss the implementation:
 // 1. The declaration of the reducer receive the state and, in this case, the user actions and returns an IUserState.

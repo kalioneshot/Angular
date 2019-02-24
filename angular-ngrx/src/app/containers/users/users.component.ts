@@ -1,10 +1,10 @@
 
-import { GetUsersAction } from './../../store/actions/user.actions';
+import { GetUsersAction } from './../../store/actions/user.action';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
 import { AppState } from '../../store/states/app.state';
-import { userListSelector } from '../../store/selectors/user.selectors';
+import { userListSelector } from '../../store/selectors/user.selector';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
-import { GetConfigAction, ConfigActionsEnum, GetConfigSuccessAction } from '../actions/config.actions';
+import { GetConfigAction, ConfigActionsEnum, GetConfigSuccessAction } from '../actions/config.action';
 import { switchMap } from 'rxjs/operators';
 import { Config } from 'src/app/models/config';
 import {of} from 'rxjs';

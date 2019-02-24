@@ -17,6 +17,8 @@ import { UserEffect } from './store/effects/user.effect';
 import { ConfigEffect } from './store/effects/config.effect';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { UserService } from './services/user.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { AppData } from './data/app.data';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { UserService } from './services/user.service';
     EffectsModule.forRoot([UserEffect, ConfigEffect]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    AppRoutingModule
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(AppData)
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -21,7 +21,7 @@ export class GetUsersSuccessAction implements Action {
 
 export class GetUserAction implements Action {
     public readonly type = UserActionsEnum.GetUser;
-    constructor(public payload: number) {}
+    constructor(public payload: string) {}
 }
 
 export class GetUserSuccessAction implements Action {

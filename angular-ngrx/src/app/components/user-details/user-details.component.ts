@@ -8,6 +8,7 @@ import { User } from '../../models/user';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
+
   @Input()
   user: User;
 
