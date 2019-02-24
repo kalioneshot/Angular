@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { IConfig } from '../models/config.interface';
+import { Config } from '../models/config';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class ConfigService {
 
   constructor(private http: HttpClient) { }
 
-  getConfig(): Observable<IConfig> {
-    return this.http.get<IConfig>(this.configUrl);
+  getConfig(): Observable<Config> {
+    return this.http.get<Config>(this.configUrl);
   }
 
 }

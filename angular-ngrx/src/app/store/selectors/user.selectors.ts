@@ -1,18 +1,18 @@
 
 import { createSelector } from '@ngrx/store';
-import { IUserState } from '../state/user.state';
-import { IAppState } from '../state/app.state';
+import { UserState } from '../states/user.state';
+import { AppState } from '../states/app.state';
 
-const selectUsers = (state: IAppState) => state.users;
+const selectUsers = (state: AppState) => state.users;
 
 // Selectors are methods used for obtaining slices of store state.
 // @ngrx/store provides a few helper functions for optimizing this selection.
-export const selectUserList = createSelector(
+export const userListSelector = createSelector(
     selectUsers,
-    (state: IUserState) => state.users
+    (state: UserState) => state.users
 );
 
-export const selectSelectedUser = createSelector(
+export const userSelector = createSelector(
     selectUsers,
-    (state: IUserState) => state.selectedUser
+    (state: UserState) => state.selectedUser
 );

@@ -1,5 +1,6 @@
 import { Customer } from 'src/app/models/customer';
 
+
 // Interface with the user state structure
 export interface CustomerState {
     customers: Customer[];

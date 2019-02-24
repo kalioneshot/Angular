@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IAppState } from './store/state/app.state';
+import { AppState } from './store/states/app.state';
 import { Store, select } from '@ngrx/store';
 import { GetConfigAction } from './store/actions/config.actions';
-import { selectConfig } from './store/selectors/config.selectors';
+import { ConfigSelector } from './store/selectors/config.selectors';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +11,9 @@ import { selectConfig } from './store/selectors/config.selectors';
 })
 export class AppComponent implements OnInit {
 
-  config$ = this.store.pipe(select(selectConfig));
+  config$ = this.store.pipe(select(ConfigSelector));
 
-  constructor(private store: Store<IAppState>) {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
     // That’s it… We already code the effect that is going to handle that action

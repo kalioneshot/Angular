@@ -3,8 +3,8 @@ import { GetUsersAction } from './../../store/actions/user.actions';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 
-import { IAppState } from '../../store/state/app.state';
-import { selectUserList } from '../../store/selectors/user.selectors';
+import { AppState } from '../../store/states/app.state';
+import { userListSelector } from '../../store/selectors/user.selectors';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./users.component.scss']
 })
 export class UsersContainerComponent implements OnInit {
-  users$ = this.store.pipe(select(selectUserList));
+  users$ = this.store.pipe(select(userListSelector));
 
-  constructor(private store: Store<IAppState>, private router: Router) {}
+  constructor(private store: Store<AppState>, private router: Router) {}
 
   ngOnInit() {
     this.store.dispatch(new GetUsersAction());

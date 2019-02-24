@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IUser } from 'src/app/models/user.interface';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-users',
@@ -8,7 +8,7 @@ import { IUser } from 'src/app/models/user.interface';
 })
 export class UsersComponent implements OnInit {
 
-  @Input() users: IUser[];
+  @Input() users: User[];
 
   @Output() userSelected: EventEmitter<number> = new EventEmitter();
 

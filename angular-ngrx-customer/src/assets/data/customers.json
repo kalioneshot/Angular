@@ -1,5 +1,4 @@
-{
-    "users": [
+[
       {
         "id": "1",
         "name": "Cédric Roignant",
@@ -21,4 +20,3 @@
         "age": 1
       }
     ]
-  }

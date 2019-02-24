@@ -1,0 +1,6 @@
+<div *ngIf="customers$">
+  <h3>Customers</h3>
+  <div *ngFor="let customerSelected of customers$ | async ">
+    <app-details-customer [customer]='customerSelected'></app-details-customer>
+  </div>
+</div>

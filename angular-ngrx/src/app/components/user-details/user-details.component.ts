@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { IUser } from '../../models/user.interface';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-user-details',
@@ -9,7 +9,7 @@ import { IUser } from '../../models/user.interface';
 })
 export class UserDetailsComponent implements OnInit {
   @Input()
-  user: IUser;
+  user: User;
 
   constructor() {}
 

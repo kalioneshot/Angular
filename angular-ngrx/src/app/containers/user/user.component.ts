@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 
-import { IAppState } from '../../store/state/app.state';
-import { selectSelectedUser } from '../../store/selectors/user.selectors';
+import { AppState } from '../../store/states/app.state';
+import { userSelector } from '../../store/selectors/user.selectors';
 import { GetUserAction } from '../../store/actions/user.actions';
 
 @Component({
@@ -11,9 +11,9 @@ import { GetUserAction } from '../../store/actions/user.actions';
   styleUrls: ['./user.component.scss']
 })
 export class UserContainerComponent implements OnInit {
-  user$ = this.store.pipe(select(selectSelectedUser));
+  user$ = this.store.pipe(select(userSelector));
 
-  constructor(private store: Store<IAppState>, private route: ActivatedRoute) {}
+  constructor(private store: Store<AppState>, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.store.dispatch(new GetUserAction(this.route.snapshot.params.id));

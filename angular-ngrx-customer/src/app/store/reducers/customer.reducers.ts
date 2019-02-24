@@ -1,14 +1,15 @@
 import { initialCustomerState, CustomerState } from '../states/customer.state';
 import { CustomerActions, CustomerActionEnum } from '../actions/customer.actions';
 
+// The customer reducers magane the success actions only, the others specifics actions managed by effects.
 export const customerReducers = ( state = initialCustomerState, action: CustomerActions): CustomerState => {
     switch (action.type) {
-        case CustomerActionEnum.GET_CUSTOMER_SUCCESS: {
-            return {
-                ...state,
-                selectedCustomer: action.payload
-            };
-        }
+        // case CustomerActionEnum.GET_CUSTOMER_SUCCESS: {
+        //    return {
+        //        ...state,
+        //        selectedCustomer: action.payload
+        //    };
+        // }
         case CustomerActionEnum.GET_CUSTOMERS_SUCCESS: {
             return {
                 ...state,

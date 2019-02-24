@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-ngrx-customer';
+  title = 'Ngrx Example - Customer';
+  description = 'POC to test the Redux pattern.';
 }

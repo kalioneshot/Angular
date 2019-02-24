@@ -1,10 +1,10 @@
 import { createSelector } from '@ngrx/store';
-import { IConfigState } from '../state/config.state';
-import { IAppState } from '../state/app.state';
+import { ConfigState } from '../states/config.state';
+import { AppState } from '../states/app.state';
 
-const configState = (state: IAppState) => state.config;
+const configState = (state: AppState) => state.config;
 
-export const selectConfig = createSelector(
+export const ConfigSelector = createSelector(
     configState,
-    (state: IConfigState) => state.config
+    (state: ConfigState) => state.config
 );
