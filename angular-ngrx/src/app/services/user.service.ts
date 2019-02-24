@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../../environments/environment';
-import { IUserHttp } from '../models/http-models/user-http.interface';
+import { User } from '../models/user';
 
 @Injectable()
 export class UserService {
@@ -12,8 +12,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<IUserHttp> {
-    return this.http.get<IUserHttp>(this.usersUrl);
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);
   }
 
 }

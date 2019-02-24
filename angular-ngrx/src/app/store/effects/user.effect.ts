@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Effect, ofType, Actions } from '@ngrx/effects';
-import { Store, select } from '@ngrx/store';
-import { of } from 'rxjs';
+import { Store, select, Action } from '@ngrx/store';
+import { of, Observable } from 'rxjs';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
 import { AppState } from '../states/app.state';
-import { GetUsersSuccessAction, UserActionsEnum, GetUserSuccessAction, GetUserAction, GetUsersAction} from '../actions/user.actions';
+import { GetUsersSuccessAction, UserActionsEnum, GetUserSuccessAction, GetUserAction, GetUsersAction } from '../actions/user.actions';
 import { UserService } from '../../services/user.service';
-import { IUserHttp } from '../../models/http-models/user-http.interface';
 import { userListSelector } from '../selectors/user.selectors';
+import { User } from 'src/app/models/user';
 
 @Injectable()
 export class UserEffect {
@@ -24,16 +24,16 @@ export class UserEffect {
     );
 
     @Effect()
-    getUsers$ = this.actions$.pipe(
+    getUsers$: Observable<Action> = this.actions$.pipe(
         ofType<GetUsersAction>(UserActionsEnum.GetUsers),
         switchMap(() => this.userService$.getUsers()),
-        switchMap((userHttp: IUserHttp) => of(new GetUsersSuccessAction(userHttp.users)))
+        switchMap((users: User[]) => of(new GetUsersSuccessAction(users)))
     );
 
     constructor(
         private userService$: UserService,
         private actions$: Actions,
         private store$: Store<AppState>
-    ) {}
+    ) { }
 }
 
