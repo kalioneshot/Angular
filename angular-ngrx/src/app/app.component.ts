@@ -11,8 +11,6 @@ import { ConfigSelector } from './store/selectors/config.selector';
 })
 export class AppComponent implements OnInit {
 
-  config$ = this.store.pipe(select(ConfigSelector));
-
   constructor(private store: Store<AppState>) {}
 
   ngOnInit() {

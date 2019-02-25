@@ -19,6 +19,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { UserService } from './services/user.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppData } from './data/app.data';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { UsersSearchComponent } from './components/users-search/users-search.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AppData } from './data/app.data';
     UsersContainerComponent,
     UsersComponent,
     UserContainerComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    NavbarComponent,
+    UsersSearchComponent
   ],
   imports: [
     BrowserModule,

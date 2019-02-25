@@ -1,1 +1,6 @@
-<app-users [users]="users$ | async" (userSelected)="navigateToUser($event)"></app-users>
+<div class="container">
+    <div class="row-m-t">
+        <app-users-search></app-users-search>
+        <app-users [users]="users$ | async" (userSelected)="navigateToUser($event)"></app-users>
+    </div>
+</div>
