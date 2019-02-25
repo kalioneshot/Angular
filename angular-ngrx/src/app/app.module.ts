@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { appReducers } from './store/reducers/app.reducer';
 import { environment } from '../environments/environment';
@@ -21,6 +22,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppData } from './data/app.data';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsersSearchComponent } from './components/users-search/users-search.component';
+import { CreateUserComponent } from './containers/create-user/create-user.component';
+import { CreateUserDetailsComponent } from './components/create-user-details/create-user-details.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +33,13 @@ import { UsersSearchComponent } from './components/users-search/users-search.com
     UserContainerComponent,
     UserDetailsComponent,
     NavbarComponent,
-    UsersSearchComponent
+    UsersSearchComponent,
+    CreateUserComponent,
+    CreateUserDetailsComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([UserEffect, ConfigEffect]),

@@ -3,4 +3,7 @@
         <app-users-search></app-users-search>
         <app-users [users]="users$ | async" (userSelected)="navigateToUser($event)"></app-users>
     </div>
+    <div class="text-right">
+        <a class="btn btn-primary" routerLink="/create-user" routerLinkActive="active" role="button">Create</a>
+    </div>
 </div>
