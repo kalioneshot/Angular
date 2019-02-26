@@ -16,4 +16,12 @@ export class UserService {
     return this.http.get<User[]>(this.url);
   }
 
+  getUsersByName(name: string): Observable<User[]> {
+    return this.http.get<User[]>(this.url + '?name=' + name);
+  }
+
+  createUser(article: User): Observable<User> {
+    return this.http.post<User>(this.url, article);
+  }
+
 }
