@@ -4,6 +4,7 @@ import { User } from 'src/app/models/user';
 export interface UserState {
     users: User[];
     userCreated: User;
+    userUpdated: User;
     selectedUser: User;
     message: any;
 }
@@ -12,6 +13,7 @@ export interface UserState {
 export const initialUserState: UserState = {
     users: null,
     userCreated: null,
+    userUpdated: null,
     selectedUser: null,
     message: ''
 };

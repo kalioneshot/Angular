@@ -11,7 +11,10 @@ export enum UserActionsEnum {
     GetUserSuccess = '[User] Get User Success',
     CreateUser = '[User] Create User',
     CreateUserSuccess = '[User] Create User Success',
-    CREATE_FAILURE = '[User] Create Failure User'
+    UpdateUser = '[User] Update User',
+    UpdateUserSuccess = '[User] Update User Success',
+    CREATE_FAILURE = '[User] Create Failure User',
+    UPDATE_FAILURE = '[User] Update Failure User'
 }
 
 export class GetUsersAction implements Action {
@@ -39,6 +42,16 @@ export class CreateUserAction implements Action {
     constructor(public payload: User) { }
 }
 
+export class CreateUserSuccessAction implements Action {
+    public readonly type = UserActionsEnum.CreateUserSuccess;
+    constructor(public payload: User) { }
+}
+
+export class UpdateFailureAction implements Action {
+    readonly type = UserActionsEnum.UPDATE_FAILURE;
+    constructor(public payload: any) { }
+}
+
 export class GetUserByNameAction implements Action {
     public readonly type = UserActionsEnum.GetUserByName;
     constructor(public payload: string) { }
@@ -49,14 +62,20 @@ export class GetUserByNameSuccessAction implements Action {
     constructor(public payload: User[]) { }
 }
 
-export class CreateUserSuccessAction implements Action {
-    public readonly type = UserActionsEnum.CreateUserSuccess;
-    constructor(public payload: User) { }
-}
-
 export class CreateFailureAction implements Action {
     readonly type = UserActionsEnum.CREATE_FAILURE;
     constructor(public payload: any) { }
+}
+
+
+export class UpdateUserAction implements Action {
+    public readonly type = UserActionsEnum.UpdateUser;
+    constructor(public payload: User) { }
+}
+
+export class UpdateUserSuccessAction implements Action {
+    public readonly type = UserActionsEnum.UpdateUserSuccess;
+    constructor(public payload: User) { }
 }
 
 export type UserActions =
@@ -68,4 +87,7 @@ export type UserActions =
     GetUserByNameSuccessAction |
     CreateUserAction |
     CreateUserSuccessAction |
-    CreateFailureAction;
+    UpdateUserAction |
+    UpdateUserSuccessAction |
+    CreateFailureAction |
+    UpdateFailureAction;

@@ -10,9 +10,9 @@ import { Injectable } from '@angular/core';
 export class AppData implements InMemoryDbService {
     createDb() {
         const usersDB = [
-            { id: '1', name: 'Robert Tail', cardNumber: 'XXXX-XXXX-XXXX-4321', cardType: 'Visa' },
-            { id: '2', name: 'Bernard Collard', cardNumber: 'XXXX-XXXX-XXXX-1369', cardType: 'Master' },
-            { id: '3', name: 'Edison Cavani', cardNumber: 'XXXX-XXXX-XXXX-8888', cardType: 'Visa' }
+            { id: '1', name: 'Robert Tail', email: 'robert.tail@gmail.com', phone: '0603060399' },
+            { id: '2', name: 'Bernard Collard', email: 'bernard.collard@hotmail.fr', phone: '0402030506' },
+            { id: '3', name: 'Edison Cavani', email: '-', phone: '0102030405' }
         ];
         const configDB = { adminName: 'Roignant Cédric', permissions: ['users'] };
         return { user: usersDB, config: configDB};

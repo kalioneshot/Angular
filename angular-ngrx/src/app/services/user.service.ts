@@ -20,8 +20,12 @@ export class UserService {
     return this.http.get<User[]>(this.url + '?name=' + name);
   }
 
-  createUser(article: User): Observable<User> {
-    return this.http.post<User>(this.url, article);
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.url, user);
+  }
+
+  public updateUser(user: User) {
+    return this.http.put<User>('this.url/user.id', user);
   }
 
 }

@@ -3,17 +3,24 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Card Number</th>
-      <th scope="col">Card Type</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users"
-      (click)="navigateToUser(user.id)">
+    <tr *ngFor="let user of users">
       <td>{{ user.id }}</td>
       <td>{{ user.name }}</td>
-      <td>{{ user.cardNumber }}</td>
-      <td>{{ user.cardType }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.phone }}</td>
+      <td>
+        <span class=" float-right">
+          <button (click)="onSelectUser(user.id)" class="btn btn-outline-primary mb-1 btn-sm">DETAILS</button>
+          <button (click)="onEditUser(user.id)" class="btn btn-outline-warning mb-1 btn-sm">EDIT</button>
+          <button (click)="onDeleteUser(user.id)" class="btn btn-outline-danger mb-1 btn-sm">DELETE</button>
+        </span>
+      </td>
     </tr>
   </tbody>
 </table>

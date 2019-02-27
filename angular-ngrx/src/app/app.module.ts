@@ -22,8 +22,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppData } from './data/app.data';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsersSearchComponent } from './components/users-search/users-search.component';
-import { CreateUserComponent } from './containers/create-user/create-user.component';
-import { CreateUserDetailsComponent } from './components/create-user-details/create-user-details.component';
+import { CreateUpdateContainerComponent } from './containers/create-update-user/create-update-user.component';
+import { CreateUpdateUserComponent } from './components/create-update-user/create-update-user.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,8 @@ import { CreateUserDetailsComponent } from './components/create-user-details/cre
     UserDetailsComponent,
     NavbarComponent,
     UsersSearchComponent,
-    CreateUserComponent,
-    CreateUserDetailsComponent
+    CreateUpdateContainerComponent,
+    CreateUpdateUserComponent
   ],
   imports: [
     BrowserModule,

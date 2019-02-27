@@ -6,6 +6,7 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from '../../store/states/app.state';
 import { userListSelector } from '../../store/selectors/user.selector';
 import { Router } from '@angular/router';
+import { ActionEventEmitter, TypeAction } from 'src/app/models/event/actionEventEmitter';
 
 @Component({
   templateUrl: './users.component.html',
@@ -14,13 +15,19 @@ import { Router } from '@angular/router';
 export class UsersContainerComponent implements OnInit {
   users$ = this.store.pipe(select(userListSelector));
 
-  constructor(private store: Store<AppState>, private router: Router) {}
+  constructor(private store: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
     this.store.dispatch(new GetUsersAction());
   }
 
-  navigateToUser(id: number) {
-    this.router.navigate(['user', id]);
+  getActionUser(action: ActionEventEmitter) {
+    if (action.typeAction === TypeAction.DETAIL) {
+      this.router.navigate(['user', action.data]);
+    } else if (action.typeAction === TypeAction.EDIT) {
+      this.router.navigate(['edit-user', action.data]);
+    } else {
+
+    }
   }
 }

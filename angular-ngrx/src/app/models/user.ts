@@ -1,13 +1,13 @@
 export class User {
     id: string;
     name: string;
-    cardNumber: string;
-    cardType: string;
+    email?: string;
+    phone?: string;
 
-    constructor(id: string, name: string, cardNumber: string, cardType: string) {
+    constructor(id: string, name: string, email: string, phone: string) {
         this.id = id;
         this.name = name;
-        this.cardNumber = cardNumber;
-        this.cardType = cardType;
+        this.email = email;
+        this.phone = phone;
     }
 }

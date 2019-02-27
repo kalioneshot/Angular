@@ -35,6 +35,14 @@ export const userReducer = (state = initialUserState, action: UserActions): User
                 users: [...state.users, action.payload]
             };
         }
+        case UserActionsEnum.UpdateUserSuccess: {
+            return {
+                ...state,
+                userUpdated: action.payload,
+                // users: state.users.concat(action.payload)
+                users: [...state.users.slice(), action.payload]
+            };
+        }
         case UserActionsEnum.CREATE_FAILURE: {
             return {
                 ...state,
