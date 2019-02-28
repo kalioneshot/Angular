@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { ActionEventEmitter, TypeAction } from 'src/app/models/event/actionEventEmitter';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +10,7 @@ import { ActionEventEmitter, TypeAction } from 'src/app/models/event/actionEvent
 })
 export class UsersComponent implements OnInit {
 
-  @Input() users: User[];
+  @Input() users: Observable<User[]>;
 
   @Output() userSelected: EventEmitter<ActionEventEmitter> = new EventEmitter();
 

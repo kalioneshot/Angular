@@ -1,6 +1,7 @@
 import { initialUserState, UserState } from '../states/user.state';
 import { UserActions, UserActionsEnum } from '../actions/user.action';
 import { userSelector } from '../selectors/user.selector';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 // Let’s discuss the implementation:
 // 1. The declaration of the reducer receive the state and, in this case, the user actions and returns an IUserState.
@@ -30,16 +31,12 @@ export const userReducer = (state = initialUserState, action: UserActions): User
         case UserActionsEnum.CreateUserSuccess: {
             return {
                 ...state,
-                userCreated: action.payload,
-                // users: state.users.concat(action.payload)
                 users: [...state.users, action.payload]
             };
         }
         case UserActionsEnum.UpdateUserSuccess: {
             return {
                 ...state,
-                userUpdated: action.payload,
-                // users: state.users.concat(action.payload)
                 users: [...state.users.slice(), action.payload]
             };
         }

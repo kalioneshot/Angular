@@ -64,7 +64,7 @@ export class GetUserByNameSuccessAction implements Action {
 
 export class CreateFailureAction implements Action {
     readonly type = UserActionsEnum.CREATE_FAILURE;
-    constructor(public payload: any) { }
+    constructor(public payload: string) { }
 }
 
 
