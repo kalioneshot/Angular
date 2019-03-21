@@ -1,6 +1,0 @@
-// Article model.
-export interface Article {
-    id: number;
-    title: string;
-    category: string;
-}
